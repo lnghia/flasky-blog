@@ -1,0 +1,10 @@
+{% macro render_field(field, placeholder, class, _autocomplete="new-password") %}
+<!-- <dt>{{ field.label }} -->
+<dd>{{ field(class_=class, placeholder=placeholder, autocomplete=_autocomplete)|safe }}
+    {% if field.errors %}
+        {% for error in field.errors %}
+            <div class="notification error">{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+</dd>
+{% endmacro %}

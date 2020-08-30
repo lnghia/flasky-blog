@@ -8,6 +8,15 @@ class Config():
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SSL_DISABLE = True
 
+    # flask mail config
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    MAIL_USE_TLS = True
+    MAIL_SUBJECT_PREFIX = '[Flaksy]'
+    MAIL_SENDER = 'valorantemail20@gmail.com'
+
     @staticmethod
     def init_app(app):
         pass
